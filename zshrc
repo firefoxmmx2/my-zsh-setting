@@ -1,7 +1,6 @@
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source ~/.zsh/fzf.zsh
 export VISUAL=nvim
 
 
@@ -75,7 +74,7 @@ plugins=(git man node bundler svn last-working-dir catimg rsync extract python f
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -159,11 +158,4 @@ preexec() {
 # 自动刷新命令
 zstyle ':completion:*' rehash true
 
-# fzf 设置
-export FZF_DEFAULT_OPTS='--height=40% --reverse --inline-info --color=dark'
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-
-# 命令行触发弹出搜索框
-export FZF_COMPLETION_TRIGGER='\'
-export FZF_COMPLETION_OPTS='--border --info=inline'
 
