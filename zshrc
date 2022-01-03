@@ -15,6 +15,7 @@ alias vim=nvim
 alias pk=pikaur
 alias rg='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias s=screenfetch
+alias mc=mcli
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
