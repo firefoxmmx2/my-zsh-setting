@@ -1,6 +1,3 @@
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/fzf.zsh
 export VISUAL=nvim
 
 
@@ -13,9 +10,15 @@ alias syc=systemctl
 alias sus="systemctl suspend"
 alias vim=nvim
 alias pk=pikaur
-alias rg='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias s=screenfetch
 alias mc=mcli
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/fzf.zsh
+source $HOME/.zsh/android.zsh
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
