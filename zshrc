@@ -1,7 +1,7 @@
 export VISUAL=nvim
+export EDITOR=nvim
 
-
-alias top="htop"
+alias top="btop"
 alias dc=docker-compose
 alias blc=bluetoothctl
 alias blwh="bluetoothctl connect 38:18:4C:7D:C6:5C"
@@ -18,6 +18,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/fzf.zsh
 source $HOME/.zsh/android.zsh
+source $HOME/.zsh/java.zsh
+source $HOME/.zsh/npm.zsh
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -26,8 +28,8 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -70,7 +72,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli)
 
 # User configuration
 
@@ -115,7 +117,6 @@ proxyoff() {
 
 # enviroment variables settings
 
-export JAVA_HOME="/usr/lib/jvm/default"
 export SPARK_HOME="$HOME/Programs/spark-2.4.6-bin-hadoop2.7"
 export HADOOP_HOME="$HOME/Programs/hadoop-3.1.3"
 export ES_HOME="$HOME/Programs/elasticsearch-7.7.1"
@@ -125,6 +126,9 @@ export MAVEN_OPTS="-Xms256m -Xmx768m"
 export NODE_OPTIONS="--max-old-space-size=2000 --max-http-header-size=10000000"
 export PATH=$PATH:$HOME/bin:$HOME/Programs/Sencha/Cmd:$HOME/node_modules/.bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ES_HOME/bin:$HADOOP_HOME/sbin:$HBASE_HOME/bin
 #export HDFS_DATANODE_USER=root
+export NLS_LANG=AMERICAN_AMERICA.UTF8
+# history setting
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 start_zkl() {
     $HOME/Programs/kafka_2.12-2.6.0/bin/zookeeper-server-start.sh -daemon $HOME/Programs/kafka_2.12-2.6.0/config/zookeeper.properties
@@ -139,27 +143,12 @@ stop_kafka() {
     $HOME/Programs/kafka_2.12-2.6.0/bin/kafka-server-stop.sh
 }
 
-# 使用vim 模式
-bindkey -v
-# 区别插入模式和普通模式
-function zle-keymap-select {
-  if [[ "${KEYMAP}" == vicmd ]] || [[ "$1" == 'block' ]]; then 
-    echo -ne '\e[1 q' 
-  elif [[ "$KEYMAP" == main ]] || [[ "${KEYMAP}" == viins ]] || [[ "${KEYMAP}" == '' ]] || [[ "$1" == 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-
-zle -N zle-keymap-select 
-echo "${KEYMAP}" "$1"
-# 默认插入模式(显示为细条）
-echo -ne '\e[5 q'
-# 在执行完上一个命令后，打开新会话执行的回调函数,这里让光标默认显示为细条(因为默认是插入模式)
-preexec() {
-  echo -ne '\e[5 q'
-}
-
 # 自动刷新命令
 zstyle ':completion:*' rehash true
 
 
+# the fuck 工具配置
+eval $(thefuck --alias)
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/mcli mcli
