@@ -13,6 +13,8 @@ alias pk=pikaur
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias s=screenfetch
 alias mc=mcli
+alias df="df -h"
+alias du="du -h"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -72,7 +74,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli pip cp fd sudo docker ssh-agent scala npm adb dotnet)
 
 # User configuration
 
