@@ -72,7 +72,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli autojump)
 
 # User configuration
 
