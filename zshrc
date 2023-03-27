@@ -6,6 +6,8 @@ alias dc=docker-compose
 alias blc=bluetoothctl
 alias blwh="bluetoothctl connect 38:18:4C:7D:C6:5C"
 alias blmdr="bluetoothctl connect 04:5D:4B:41:38:2E"
+alias bljr="bluetoothctl connect 50:C2:ED:ED:5D:BE"
+alias bldc="bluetoothctl disconnect"
 alias syc=systemctl
 alias sus="systemctl suspend"
 alias vim=nvim
@@ -100,7 +102,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
@@ -125,7 +127,6 @@ export ES_HOME="$HOME/Programs/elasticsearch-7.7.1"
 export HBASE_HOME="$HOME/Programs/hbase-2.2.5"
 export MAVEN_OPTS="-Xms256m -Xmx768m"
 #export HDFS_NAMENODE_USER=root
-export NODE_OPTIONS="--max-old-space-size=2000 --max-http-header-size=10000000"
 export PATH=$PATH:$HOME/bin:$HOME/Programs/Sencha/Cmd:$HOME/node_modules/.bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ES_HOME/bin:$HADOOP_HOME/sbin:$HBASE_HOME/bin
 #export HDFS_DATANODE_USER=root
 export NLS_LANG=AMERICAN_AMERICA.UTF8
@@ -154,3 +155,6 @@ eval $(thefuck --alias)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mcli mcli
+
+# jump setting
+eval "$(jump shell zsh)"
