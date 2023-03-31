@@ -15,6 +15,8 @@ alias pk=pikaur
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias s=screenfetch
 alias mc=mcli
+alias df="df -h"
+alias du="du -h"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -22,6 +24,7 @@ source $HOME/.zsh/fzf.zsh
 source $HOME/.zsh/android.zsh
 source $HOME/.zsh/java.zsh
 source $HOME/.zsh/npm.zsh
+source $HOME/.zsh/es.zsh
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -75,6 +78,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli yarn zsh-navigation-tools dotnet sudo)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli pip cp fd sudo docker ssh-agent scala npm adb dotnet)
 
 # User configuration
 
@@ -119,7 +123,7 @@ proxyoff() {
 
 # enviroment variables settings
 
-export SPARK_HOME="$HOME/Programs/spark-2.4.6-bin-hadoop2.7"
+export SPARK_HOME="$HOME/Programs/bigdata-image/spark-2.4.7"
 export HADOOP_HOME="$HOME/Programs/hadoop-3.1.3"
 export ES_HOME="$HOME/Programs/elasticsearch-7.7.1"
 export HBASE_HOME="$HOME/Programs/hbase-2.2.5"
