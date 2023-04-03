@@ -18,13 +18,15 @@ alias mc=mcli
 alias df="df -h"
 alias du="du -h"
 
+
+ZSH_HOME=${HOME}/.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/fzf.zsh
-source $HOME/.zsh/android.zsh
-source $HOME/.zsh/java.zsh
-source $HOME/.zsh/npm.zsh
-source $HOME/.zsh/es.zsh
+source $ZSH_HOME/fzf.zsh
+source $ZSH_HOME/android.zsh
+source $ZSH_HOME/java.zsh
+source $ZSH_HOME/npm.zsh
+source $ZSH_HOME/es.zsh
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -77,7 +79,6 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli yarn zsh-navigation-tools dotnet sudo)
 plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf vi-mode vim-interaction redis-cli pip cp fd sudo docker ssh-agent scala npm adb dotnet)
 
 # User configuration
