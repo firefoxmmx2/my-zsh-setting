@@ -22,6 +22,8 @@ alias du="du -h"
 ZSH_HOME=${HOME}/.config/zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# notejs manager setting
+source /usr/share/nvm/init-nvm.sh
 source $ZSH_HOME/fzf.zsh
 source $ZSH_HOME/android.zsh
 source $ZSH_HOME/java.zsh
@@ -79,7 +81,7 @@ ZSH_CUSTOM=$ZSH_HOME/oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp fd sudo docker ssh-agent scala npm adb dotnet)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp fd sudo docker scala npm adb dotnet)
 
 # User configuration
 
