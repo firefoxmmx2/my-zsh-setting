@@ -19,7 +19,7 @@ alias df="df -h"
 alias du="du -h"
 
 
-ZSH_HOME=${HOME}/.config/zsh
+ZSH_HOME=${HOME}/.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # notejs manager setting
