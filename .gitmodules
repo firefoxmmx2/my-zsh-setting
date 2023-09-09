@@ -1,3 +1,6 @@
 [submodule "zsh-fzf-history-search"]
 	path = zsh-fzf-history-search
 	url = git@github.com:joshskidmore/zsh-fzf-history-search.git
+[submodule "zsh-vi-mode"]
+	path = zsh-vi-mode
+	url = git@github.com:jeffreytse/zsh-vi-mode.git
