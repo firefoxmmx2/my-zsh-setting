@@ -1,25 +1,6 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
-alias top="btop"
-alias dc=docker-compose
-alias blc=bluetoothctl
-alias blwh="bluetoothctl connect 38:18:4C:7D:C6:5C"
-alias blmdr="bluetoothctl connect 04:5D:4B:41:38:2E"
-alias bljr="bluetoothctl connect 50:C2:ED:ED:5D:BE"
-alias bldc="bluetoothctl disconnect"
-alias syc=systemctl
-alias sus="systemctl suspend"
-alias vim=nvim
-alias pk=pikaur
-alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
-alias s=screenfetch
-alias mc=mcli
-alias df="df -h"
-alias du="dust"
-alias cat="bat"
-alias ls="lsd"
-
 
 ZSH_HOME=${HOME}/.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -166,3 +147,25 @@ complete -o nospace -C /usr/bin/mcli mcli
 
 # jump setting
 eval "$(jump shell zsh)"
+
+# alias
+alias top="btop"
+alias dc=docker-compose
+alias blc=bluetoothctl
+alias blwh="bluetoothctl connect 38:18:4C:7D:C6:5C"
+alias blmdr="bluetoothctl connect 04:5D:4B:41:38:2E"
+alias bljr="bluetoothctl connect 50:C2:ED:ED:5D:BE"
+alias bldc="bluetoothctl disconnect"
+alias syc=systemctl
+alias sus="systemctl suspend"
+alias vim=nvim
+alias pk=pikaur
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
+alias s=screenfetch
+alias mc=mcli
+alias df="df -h"
+alias du="dust"
+alias cat="bat"
+alias ls="lsd"
+
+
