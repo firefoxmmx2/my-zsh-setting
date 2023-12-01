@@ -16,7 +16,8 @@ alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); 
 alias s=screenfetch
 alias mc=mcli
 alias df="df -h"
-alias du="du -h"
+alias du="dust"
+alias cat="bat"
 
 
 ZSH_HOME=${HOME}/.zsh
@@ -131,8 +132,9 @@ export HADOOP_HOME="$HOME/Programs/hadoop-3.1.3"
 export ES_HOME="$HOME/Programs/elasticsearch-7.7.1"
 export HBASE_HOME="$HOME/Programs/hbase-2.2.5"
 export MAVEN_OPTS="-Xms256m -Xmx768m"
+export FLINK_HOME="$HOME/Public/flink-1.16.0"
 #export HDFS_NAMENODE_USER=root
-export PATH=$PATH:$HOME/bin:$HOME/Programs/Sencha/Cmd:$HOME/node_modules/.bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ES_HOME/bin:$HADOOP_HOME/sbin:$HBASE_HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/Programs/Sencha/Cmd:$HOME/node_modules/.bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ES_HOME/bin:$HADOOP_HOME/sbin:$HBASE_HOME/bin:$FLINK_HOME/bin
 #export HDFS_DATANODE_USER=root
 export NLS_LANG=AMERICAN_AMERICA.UTF8
 # history setting
