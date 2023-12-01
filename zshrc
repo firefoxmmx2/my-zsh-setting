@@ -163,7 +163,7 @@ alias pk=pikaur
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias s=screenfetch
 alias mc=mcli
-alias df="df -h"
+alias df="duf"
 alias du="dust"
 alias cat="bat"
 alias ls="lsd"
