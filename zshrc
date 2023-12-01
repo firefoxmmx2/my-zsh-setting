@@ -18,6 +18,7 @@ alias mc=mcli
 alias df="df -h"
 alias du="dust"
 alias cat="bat"
+alias ls="lsd"
 
 
 ZSH_HOME=${HOME}/.zsh
