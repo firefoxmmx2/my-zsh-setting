@@ -2,7 +2,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 
-ZSH_HOME=${HOME}/.zsh
+ZSH_HOME=${HOME}/.config/zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # notejs manager setting
