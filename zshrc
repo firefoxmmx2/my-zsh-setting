@@ -99,8 +99,8 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 proxyon () {
-    export HTTP_PROXY="http://localhost:1081"
-    export HTTPS_PROXY="http://localhost:1081"
+    export HTTP_PROXY="http://localhost:1080"
+    export HTTPS_PROXY="https://localhost:1080"
 }
 
 proxyoff() {
