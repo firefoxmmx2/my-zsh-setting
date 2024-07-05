@@ -161,7 +161,8 @@ alias syc=systemctl
 alias sus="systemctl suspend"
 alias vim=nvim
 alias pk=pikaur
-alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
+# alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
+alias ra='yazi'
 alias s=screenfetch
 alias mc=mcli
 alias df="duf"
