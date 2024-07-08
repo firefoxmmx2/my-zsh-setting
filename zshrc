@@ -13,6 +13,7 @@ source $ZSH_HOME/java.zsh
 source $ZSH_HOME/npm.zsh
 source $ZSH_HOME/es.zsh
 source $ZSH_HOME/ruby.zsh
+source $ZSH_HOME/glasskube.zsh
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
