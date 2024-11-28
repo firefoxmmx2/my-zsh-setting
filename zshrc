@@ -161,7 +161,6 @@ alias bldc="bluetoothctl disconnect"
 alias syc=systemctl
 alias sus="systemctl suspend"
 alias vim=nvim
-alias pk=pikaur
 # alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias ra='yazi'
 alias s=screenfetch
@@ -170,9 +169,18 @@ alias df="duf"
 alias du="dust"
 alias cat="bat"
 alias ls="lsd"
+alias paruy="paru -S --noconfirm"
 
 
 # pnpm
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# pnpm
+export PNPM_HOME="/home/ffmmx/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
