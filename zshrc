@@ -170,6 +170,7 @@ alias du="dust"
 alias cat="bat"
 alias ls="lsd"
 alias paruy="paru -S --noconfirm"
+alias mvn="mvnd"
 
 
 # pnpm
