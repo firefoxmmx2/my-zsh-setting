@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 proxyon () {
     export HTTP_PROXY="http://localhost:1081"
-    export HTTPS_PROXY="http://localhost:1081"
+    export HTTPS_PROXY="$HTTP_PROXY"
 }
 
 proxyoff() {
