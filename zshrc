@@ -14,6 +14,7 @@ source $ZSH_HOME/npm.zsh
 source $ZSH_HOME/es.zsh
 source $ZSH_HOME/ruby.zsh
 source $ZSH_HOME/glasskube.zsh
+source $ZSH_HOME/ime.zsh
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -66,7 +67,7 @@ ZSH_CUSTOM=$ZSH_HOME/oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp fd sudo docker scala npm adb dotnet zsh-fzf-history-search)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet zsh-fzf-history-search)
 
 # User configuration
 
@@ -140,6 +141,8 @@ stop_kafka() {
 # 自动刷新命令
 zstyle ':completion:*' rehash true
 
+# 禁用 ! 历史扩展
+set +H
 
 # the fuck 工具配置
 eval $(thefuck --alias)
@@ -177,11 +180,3 @@ alias mvn="mvnd"
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-# pnpm
-export PNPM_HOME="/home/ffmmx/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
