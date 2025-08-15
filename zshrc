@@ -176,7 +176,4 @@ alias paruy="paru -S --noconfirm"
 alias mvn="mvnd"
 
 
-# pnpm
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+cd() { builtin cd "$@" && nvm use; }
