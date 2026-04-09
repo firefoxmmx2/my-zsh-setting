@@ -124,6 +124,8 @@ export PATH=$PATH:$HOME/bin:$HOME/Programs/Sencha/Cmd:$HOME/node_modules/.bin:$S
 export NLS_LANG=AMERICAN_AMERICA.UTF8
 # history setting
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+# 设置google clond project
+export GOOGLE_CLOUD_PROJECT=ffmmxxxnet1
 
 start_zkl() {
     $HOME/Programs/kafka_2.12-2.6.0/bin/zookeeper-server-start.sh -daemon $HOME/Programs/kafka_2.12-2.6.0/config/zookeeper.properties
@@ -147,9 +149,6 @@ eval $(thefuck --alias)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mcli mcli
-
-# jump setting
-eval "$(jump shell zsh)"
 
 # alias
 alias top="btop"
@@ -178,3 +177,14 @@ alias paruy="paru -S --noconfirm"
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
+# zsh-vi-mode
+bindkey -v
+
+# pnpm
+export PNPM_HOME="/home/ffmmx/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(zoxide init zsh)"
