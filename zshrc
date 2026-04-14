@@ -7,17 +7,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # notejs manager setting
 source /usr/share/nvm/init-nvm.sh
-source $ZSH_HOME/fzf.zsh
 source $ZSH_HOME/android.zsh
 source $ZSH_HOME/java.zsh
 source $ZSH_HOME/npm.zsh
 source $ZSH_HOME/es.zsh
 source $ZSH_HOME/ruby.zsh
 source $ZSH_HOME/glasskube.zsh
-
-# Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -66,7 +62,12 @@ ZSH_CUSTOM=$ZSH_HOME/oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet zsh-fzf-history-search tmux mvn)
+# zsh-vi-mode 配置 - 重写 Ctrl+R 为 fzf 历史搜索
+function zvm_config() {
+  zvm_bindkey viins '^R' fzf-history-widget
+  zvm_bindkey vicmd '^R' fzf-history-widget
+}
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet tmux mvn)
 
 # User configuration
 
@@ -98,6 +99,9 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+# fzf 设置
+source $ZSH_HOME/fzf.zsh
 
 proxyon () {
     export HTTP_PROXY="http://localhost:1080"
@@ -177,9 +181,6 @@ alias paruy="paru -S --noconfirm"
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-# zsh-vi-mode
-bindkey -v
-
 # pnpm
 export PNPM_HOME="/home/ffmmx/.local/share/pnpm"
 case ":$PATH:" in
@@ -188,3 +189,14 @@ case ":$PATH:" in
 esac
 # pnpm end
 eval "$(zoxide init zsh)"
+
+# 在 zsh-vi-mode 初始化完成后绑定 Ctrl+R 到 fzf
+function fix_fzf_history_bind() {
+  if [[ -n "$ZVM_INIT_DONE" ]]; then
+    bindkey -M viins '^R' fzf-history-widget
+    bindkey -M vicmd '^R' fzf-history-widget
+    # 移除这个 precmd 函数
+    precmd_functions=(${precmd_functions:#fix_fzf_history_bind})
+  fi
+}
+precmd_functions+=(fix_fzf_history_bind)
