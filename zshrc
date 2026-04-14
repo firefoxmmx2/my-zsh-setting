@@ -150,8 +150,8 @@ eval $(thefuck --alias)
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mcli mcli
 
-# jump setting
-eval "$(jump shell zsh)"
+# zoxide setting
+eval "$(zoxide init zsh)"
 
 # alias
 alias top="btop"
@@ -176,4 +176,3 @@ alias paruy="paru -S --noconfirm"
 alias mvn="mvnd"
 
 
-cd() { builtin cd "$@" && nvm use; }
