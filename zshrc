@@ -63,11 +63,21 @@ DISABLE_AUTO_UPDATE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$ZSH_HOME/oh-my-zsh
 
+# 确保 fzf 历史绑定在 zsh-vi-mode 完全初始化后生效
+function fix_fzf_history_bind() {
+  if [[ -n "$ZVM_INIT_DONE" ]]; then
+    bindkey -M viins '^r' fzf-history-widget
+    bindkey -M vicmd '^r' fzf-history-widget
+    precmd_functions=(${precmd_functions:#fix_fzf_history_bind})
+  fi
+}
+precmd_functions+=(fix_fzf_history_bind)
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet zsh-fzf-history-search)
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet)
 
 # User configuration
 
