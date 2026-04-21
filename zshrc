@@ -13,6 +13,8 @@ source $ZSH_HOME/npm.zsh
 source $ZSH_HOME/es.zsh
 source $ZSH_HOME/ruby.zsh
 source $ZSH_HOME/glasskube.zsh
+source $ZSH_HOME/user_var.zsh
+
 ZSH=/usr/share/oh-my-zsh/
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -66,6 +68,10 @@ ZSH_CUSTOM=$ZSH_HOME/oh-my-zsh
 function zvm_config() {
   zvm_bindkey viins '^R' fzf-history-widget
   zvm_bindkey vicmd '^R' fzf-history-widget
+  # 插入模式：闪烁射线
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+  # 普通模式：闪烁块
+  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 }
 plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet tmux mvn)
 
