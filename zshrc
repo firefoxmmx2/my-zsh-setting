@@ -17,6 +17,8 @@ source $ZSH_HOME/glasskube.zsh
 source $ZSH_HOME/ime.zsh
 
 # Path to your oh-my-zsh installation.
+source $ZSH_HOME/user_var.zsh
+
 ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load.
@@ -77,7 +79,16 @@ precmd_functions+=(fix_fzf_history_bind)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet)
+# zsh-vi-mode 配置 - 重写 Ctrl+R 为 fzf 历史搜索
+function zvm_config() {
+  zvm_bindkey viins '^R' fzf-history-widget
+  zvm_bindkey vicmd '^R' fzf-history-widget
+  # 插入模式：闪烁射线
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+  # 普通模式：闪烁块
+  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+}
+plugins=(git man node bundler svn last-working-dir catimg rsync extract python fzf zsh-vi-mode vim-interaction redis-cli pip cp sudo docker scala npm dotnet tmux mvn)
 
 # User configuration
 
