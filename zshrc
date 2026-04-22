@@ -135,19 +135,6 @@ export NLS_LANG=AMERICAN_AMERICA.UTF8
 # history setting
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
-start_zkl() {
-    $HOME/Programs/kafka_2.12-2.6.0/bin/zookeeper-server-start.sh -daemon $HOME/Programs/kafka_2.12-2.6.0/config/zookeeper.properties
-}
-stop_zkl() {
-    $HOME/Programs/kafka_2.12-2.6.0/bin/zookeeper-server-stop.sh
-}
-start_kafka() {
-    $HOME/Programs/kafka_2.12-2.6.0/bin/kafka-server-start.sh -daemon $HOME/Programs/kafka_2.12-2.6.0/config/server.properties
-}
-stop_kafka() {
-    $HOME/Programs/kafka_2.12-2.6.0/bin/kafka-server-stop.sh
-}
-
 # 自动刷新命令
 zstyle ':completion:*' rehash true
 
