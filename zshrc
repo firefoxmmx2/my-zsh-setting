@@ -17,6 +17,7 @@ source $ZSH_HOME/glasskube.zsh
 source $ZSH_HOME/ime.zsh
 
 # Path to your oh-my-zsh installation.
+source $ZSH_HOME/opencode.zsh
 source $ZSH_HOME/user_var.zsh
 
 ZSH=/usr/share/oh-my-zsh/
