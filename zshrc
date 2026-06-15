@@ -106,8 +106,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# fzf 设置
-source $ZSH_HOME/fzf.zsh
+
 
 proxyon () {
     export HTTP_PROXY="http://localhost:1080"
@@ -182,18 +181,6 @@ alias ls="lsd"
 alias paruy="paru -S --noconfirm"
 
 
-# pnpm
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-# pnpm
-export PNPM_HOME="/home/ffmmx/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 eval "$(zoxide init zsh)"
 
 # 在 zsh-vi-mode 初始化完成后绑定 Ctrl+R 到 fzf
@@ -206,3 +193,7 @@ function fix_fzf_history_bind() {
   fi
 }
 precmd_functions+=(fix_fzf_history_bind)
+
+function zvm_after_init() {
+  source $ZSH_HOME/fzf.zsh
+}
