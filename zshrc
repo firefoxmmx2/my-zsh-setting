@@ -13,6 +13,7 @@ source $ZSH_HOME/npm.zsh
 source $ZSH_HOME/es.zsh
 source $ZSH_HOME/ruby.zsh
 source $ZSH_HOME/glasskube.zsh
+source $ZSH_HOME/opencode.zsh
 source $ZSH_HOME/user_var.zsh
 
 ZSH=/usr/share/oh-my-zsh/
