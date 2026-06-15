@@ -11,7 +11,7 @@ export NODE_OPTIONS="--max-old-space-size=2000 --max-http-header-size=10000000"
 # pnpm
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PATH:$PNPM_HOME" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
