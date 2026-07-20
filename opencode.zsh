@@ -6,7 +6,7 @@
 
 # 打开 OpenCode 实验性工作区功能
 # 启用后可使用多工作区、工作区切换等实验性特性
-export OPENCODE_EXPERIMENTAL_WORKSPACES=true
+export OPENCODE_EXPERIMENTAL_WORKSPACES=false
 
 #compdef opencode
 ###-begin-opencode-completions-###
