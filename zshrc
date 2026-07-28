@@ -72,8 +72,8 @@ ZSH_CUSTOM=$ZSH_HOME/oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-vi-mode 配置
 function zvm_config() {
-  # 插入模式：闪烁射线
-  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+  # 插入模式：闪烁块
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
   # 普通模式：闪烁块
   ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 }
